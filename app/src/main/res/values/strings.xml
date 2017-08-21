@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">TrukkerUae</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_order_list">OrderListActivity</string>
+
+    <string name="order">Order Detail</string>
+    <string name="driver_truck_detail">Driver And Truck Detail</string>
+    <string name="navigation">Navigation</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_ongoing_fragment">OngoingFragmentActivity</string>
+
+    <!-- alert messages -->
+    <string name="no_internet">No Internet connection</string>
+    <string name="internet_slow">Internet connection lost or slow</string>
+
+    <!-- common uses string dont remove this -->
+    <string name="latitude_longitude">%1$.8f, %2$.8f</string>
+    <string name="title_activity_ongoing_order_detail">OngoingOrderDetail</string>
+    <string name="title_activity_history_list">HistoryListActivity</string>
+    <string name="title_activity_ongoing_order_map">OngoingOrderMap</string>
+
+
+    <string name="pass_specific_chars">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890</string>
+
+    <string name="google_app_id">trukkeruae.trukkertech.com.trukkeruae</string>
+    <string name="google_api_key">AIzaSyA-Ov_6a73RurkQdtHQrI0x54TOaTsbtNk</string>
+
+    <string name="gcm_not_supported">GCM not supported in your device.</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+
+    <string name="slidetounlock_label">slide to unlock</string>
+    <string name="slidetounlock_label_default">slide to Receive</string>
+    <string name="service_desc">background service</string>
+</resources>

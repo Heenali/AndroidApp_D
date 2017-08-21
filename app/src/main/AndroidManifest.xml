@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="trukkeruae.trukkertech.com.trukkeruae">
+
+    <uses-feature
+        android:glEsVersion="0x00020000" android:required="true" />
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+    <permission
+        android:name="android.permission.WAKE_LOCK"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.settings.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+
+    <permission
+        android:name="com.android.alarm.permission.SET_ALARM"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="trukkeruae.trukkertech.com.trukkeruae.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="trukkeruae.trukkertech.com.trukkeruae.permission.C2D_MESSAGE" />
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="trukkeruae.trukkertech.com.trukkeruae.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.location.network" />
+
+    <uses-permission android:name="trukkeruae.trukkertech.com.trukkeruae.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="TruKKerUAE Driver"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Defining Services -->
+        <!--  <receiver
+              android:name=".backgroundServices.MyWakefulReceiver"
+              android:enabled="true"
+              android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
+              <intent-filter>
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                  <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
+                  <action android:name="com.htc.intent.action.QUICKBOOT_POWEROFF" />
+                  <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                  <action android:name="android.intent.action.REBOOT" />
+                  <action android:name="android.intent.action.BATTERY_CHANGED" />
+
+                  <category android:name="android.intent.category.DEFAULT" />
+                  <category android:name="android.intent.category.HOME" />
+              </intent-filter>
+          </receiver>-->
+        <!--  <receiver
+              android:name=".backgroundServices.AlarmReceiver"
+              android:enabled="true"
+              android:exported="false"
+              android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
+              <intent-filter>
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
+                  <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                  <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
+                  <action android:name="com.htc.intent.action.QUICKBOOT_POWEROFF" />
+                  <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                  <action android:name="android.intent.action.REBOOT" />
+                  <action android:name="android.intent.action.BATTERY_CHANGED" />
+
+                  <category android:name="android.intent.category.DEFAULT" />
+                  <category android:name="android.intent.category.HOME" />
+              </intent-filter>
+
+          </receiver>-->
+          <service
+              android:exported="false"
+              android:name=".jobshedular.DemoJobService">
+              <intent-filter>
+                  <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>"
+              </intent-filter>
+          </service>
+          <service
+              android:exported="false"
+              android:name=".jobshedular.DemoJobService_Autoallocation">
+              <intent-filter>
+                  <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>"
+              </intent-filter>
+          </service>
+          <service
+              android:name=".firebaseService.MyFirebaseMessagingService"
+              android:exported="false">
+              <intent-filter>
+                  <action android:name="com.google.firebase.MESSAGING_EVENT" />
+              </intent-filter>
+          </service>
+
+          <service
+              android:name=".firebaseService.MyFirebaseInstanceIDService"
+              android:exported="false"  android:enabled="true">
+              <intent-filter>
+                  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+              </intent-filter>
+          </service>
+
+          <service android:name=".backgroundServices.BackgroundOrderService" />
+          <service android:name=".backgroundServices.DriverGoodsOrder" />
+          <service android:name=".backgroundServices.LocationService" />
+          <activity
+              android:name=".TrukkerUae.SplashScreen"
+              android:screenOrientation="portrait"
+              android:theme="@android:style/Theme.Translucent.NoTitleBar">
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+          </activity>
+          <activity
+              android:name=".TrukkerUae.DriverDashboard"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.LoginActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.OrderListActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.HistoryListActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.ForgotPasswordActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.TrackOrderMap"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.DriverMapActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.NotificationMessagesActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+          <activity
+              android:name=".TrukkerUae.MapActivityforHT"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+
+          <activity
+              android:name=".TrukkerUae.NewOrderBringActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/AppTheme.NoActionBar" />
+
+          <activity android:label="Schedule a job" android:name=".jobshedular.JobFormActivity"/>
+
+          <activity android:label=".JobDetailActivity" android:name=".jobshedular.JobDetailActivity"/>
+
+          <meta-data
+              android:name="com.google.android.gms.version"
+              android:value="@integer/google_play_services_version" />
+          <meta-data
+              android:name="com.google.android.geo.API_KEY"
+              android:value="${mapApiKeyValue}" />
+          <meta-data
+              android:name="io.fabric.ApiKey"
+              android:value="aa0fd97f23d2c5001c520545bd211f8f628b7f0b" />
+      </application>
+
+  </manifest>

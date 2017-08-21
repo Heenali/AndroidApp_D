@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "945920188569",
+    "firebase_url": "https://trukker-uae-app.firebaseio.com",
+    "project_id": "trukker-uae-app",
+    "storage_bucket": "trukker-uae-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945920188569:android:705aac56b2a0a449",
+        "android_client_info": {
+          "package_name": "trukkeruae.trukkertech.com.trukkeruae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945920188569-22894pkt55sj8a7s71o26r33v11n2dlf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trukkeruae.trukkertech.com.trukkeruae",
+            "certificate_hash": "2117413C90089251FED84D1B63487AD3EB83FB1E"
+          }
+        },
+        {
+          "client_id": "945920188569-dmbg5bsrr29600j2epeqbbg833cvc05b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGpiRPM6Cb9NIGRChPNm9eUolJYiIotvM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945920188569-dmbg5bsrr29600j2epeqbbg833cvc05b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

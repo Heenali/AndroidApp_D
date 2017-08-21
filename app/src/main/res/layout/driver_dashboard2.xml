@@ -1,0 +1,212 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_first"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/gray_light"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/driver_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="AKHBARSINH BHATIA"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:gravity="right">
+
+            <RelativeLayout
+                android:id="@+id/notification_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/notification" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/counter_layout"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_red" />
+
+                <TextView
+                    android:id="@+id/msg_counter_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="4"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_first"
+        android:background="@drawable/background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/order_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/orders" />
+
+        <ImageView
+            android:id="@+id/history_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/history" />
+
+        <LinearLayout
+            android:id="@+id/switch_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/full_round_curv_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/on_duety_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="ON DUTY"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:theme="@style/MySwitch"
+                app:track="@color/white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/terms_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:text="Privacy Policy"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/version_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:text="App version"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/new_order_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/switch_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/orders"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/orders" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/new_icon" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--    <ImageView
+            android:id="@+id/driver_image_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/logo" />-->
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/driver_image_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/no_img"
+        app:siBorderColor="@color/white"
+        app:siBorderWidth="2dp" />
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:id="@+id/image_upload"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/camera" />
+
+    </RelativeLayout>
+</RelativeLayout>

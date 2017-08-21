@@ -1,0 +1,7 @@
+<resources>
+    <!--AIzaSyAORnm2Sp4E_mUTBhDKmauJSXt_HEmy0uo  (malay_id)-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+       AIzaSyCxtyZc4exPvPR1t3qCuLoyBp2f_6NerBs
+    </string>
+
+</resources>

@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">#434252</item>
+        <item name="colorPrimaryDark">#434252</item>
+        <item name="colorAccent">#434252</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:editTextStyle">@style/GooglePlusButtonStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="GooglePlusButtonStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--declair toggle theam -->
+    <style name="MySwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/green_bg</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/SandyBrown</item>
+
+    </style>
+
+   <!-- <style name="Theme.Transparent" parent="android:Theme">
+        &lt;!&ndash;<item name="android:windowIsTranslucent">true</item>&ndash;&gt;
+        <item name="android:windowBackground">@android:color/transparent</item>
+        &lt;!&ndash;<item name="android:windowContentOverlay">@null</item>&ndash;&gt;
+        <item name="android:windowNoTitle">true</item>
+      &lt;!&ndash;  <item name="android:windowIsFloating">true</item>&ndash;&gt;
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>-->
+    <!--close -->
+
+    <!--text style  -->
+    <style name="MyEditTextstyle">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHint">#C5C5C5</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textSize">12sp</item>
+        //many more per requirement
+    </style>
+
+    <style name="MainButtonTextstyle">
+        <item name="android:textColor">#FFFEFC</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TitleTextstyle">
+        <item name="android:textColor">#FFFEFC</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!--close -->
+</resources>

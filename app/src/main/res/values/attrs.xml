@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="StepperIndicator" tools:ignore="ResourceName">
+        <attr name="stpi_stepCount" format="integer" />
+        <attr name="stpi_animDuration" format="integer" />
+
+        <attr name="stpi_circleColor" format="color" />
+        <attr name="stpi_circleRadius" format="dimension" />
+        <attr name="stpi_circleStrokeWidth" format="dimension" />
+
+        <attr name="stpi_indicatorColor" format="color" />
+        <attr name="stpi_indicatorRadius" format="dimension" />
+
+        <attr name="stpi_lineColor" format="color" />
+        <attr name="stpi_lineDoneColor" format="color" />
+        <attr name="stpi_lineStrokeWidth" format="dimension" />
+        <attr name="stpi_lineMargin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SlideToUnlockView">
+        <attr name="text1" format="string" />
+        <attr name="thumb1" format="integer" />
+        <attr name="track1" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

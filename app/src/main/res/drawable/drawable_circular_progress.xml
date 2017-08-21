@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/secondaryProgress">
+        <shape
+            android:shape="ring"
+            android:thicknessRatio="20">
+            <solid android:color="#AFAFAF" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <shape
+            android:shape="ring"
+            android:thicknessRatio="20">
+            <solid android:color="@color/Orange" />
+        </shape>
+    </item>
+
+</layer-list>

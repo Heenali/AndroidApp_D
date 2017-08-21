@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.ext.compileSdk
+    buildToolsVersion project.ext.buildtools
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.firebase.jobdispatcher.testapp"
+
+        minSdkVersion project.ext.minSdk
+        targetSdkVersion 20
+        versionCode 1
+        versionName project.ext.version
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+    compile project(path: ':jobdispatcher')
+    compile "com.android.support:appcompat-v7:${project.ext.supportLibraryVersion}"
+    compile "com.android.support:support-v4:${project.ext.supportLibraryVersion}"
+    compile "com.android.support:recyclerview-v7:${project.ext.supportLibraryVersion}"
+    compile "com.android.support:design:${project.ext.supportLibraryVersion}"
+    compile 'com.google.android.gms:play-services-base:7.0.0'
+    compile 'com.google.android.gms:play-services-analytics:7.0.0'
+    compile 'com.google.android.gms:play-services-maps:7.0.0'
+    compile 'com.google.android.gms:play-services-location:7.0.0'
+}

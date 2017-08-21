@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_header"
+        layout="@layout/toolbar_layout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/notification_recycl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_header"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_bg_transparent"
+        android:scrollbars="none" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_header"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="You Have No Order"
+        android:textColor="@color/gray"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/noRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_header"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="You Have No Message"
+        android:textColor="@color/gray"
+        android:visibility="gone" />
+
+</LinearLayout>

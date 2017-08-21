@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.firebase.jobdispatcher.RetryStrategy" />
+
+        <variable
+            name="form"
+            type="trukkeruae.trukkertech.com.trukkeruae.jobshedular.JobForm" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/address_head_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/load_inq_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:text="Trip P10005241"
+            android:textAllCaps="true"
+            android:textColor="@color/app_orange_dark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_km_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="56.4 KM"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/navigation" />
+
+
+    <LinearLayout
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:paddingBottom="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:id="@+id/action_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0.5">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/start_pickup_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/curve_fill_bg"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Start For Pickup"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/loading_start_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/curve_fill_bg"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Loading Start"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/ongoing_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/curve_fill_bg"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Start For Destination"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/on_way_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/curve_fill_bg"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Unloading Start"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/unloading_complete_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/curve_fill_bg"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="moving Complete"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/order_detail_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/order_detail_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="0.5"
+                        android:background="@null"
+                        android:text="Shipper Detail"
+                        android:textColor="@color/app_orange_dark"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/icon_arrow"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/order_detail_btn"
+                        android:src="@drawable/up_arrow" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/gray_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="15dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/view_addr1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/lable_from"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="MOVING FROM"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvsource"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="left"
+                            android:text="305,Sapath-IV,Pralhad nagar, S.G Highway, Ahmedabad"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/view_img_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.1"
+                        android:gravity="center">
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:background="#D3CBD4" />
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/move_circle" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/view_addr2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/lable_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="MOVING TO"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvdesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="right"
+                            android:text="305,Sapath-IV,Pralhad nagar, S.G Highway, Ahmedabad"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/gray_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/total_fright_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/lable_fright"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right"
+                            android:text="Total Freight"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/total_fright_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="left"
+                            android:text="1000 LBS"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/shipper_name_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/lable_shipper_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right"
+                            android:text="Shipper Name"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/customer_name_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="left"
+                            android:text="Sachin Tendulkar"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/emailid_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/lable_emailid"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right"
+                            android:text="Email ID"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/customer_emailid_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="left"
+                            android:text="sachin@tendulkar.com"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mobile_num_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/lable_mobile_num"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right"
+                            android:text="Contact Number"
+                            android:textColor="@color/gray_dark"
+                            android:textSize="12sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/cutomer_mobno_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="9999999999"
+                                android:textColor="@color/green_bg"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/driver_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/address_head_lay"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/linlaHeaderProgress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pbHeaderProgress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+            <EditText
+                android:id="@+id/tagField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
+                android:hint="Job tag"
+                android:maxLength="100"
+                android:nextFocusDown="@+id/winStartField"
+                android:singleLine="true"
+                android:text="@={form.tag}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Window start (seconds)"
+                android:text="@={form.winStartSecondsStr}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Window end (seconds)"
+                android:text="@={form.winEndSecondsStr}" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.constrainOnAnyNetwork}"
+                android:text="Only run with a valid network connection" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.constrainOnUnmeteredNetwork}"
+                android:text="Only run with an unmetered network connection" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.constrainDeviceCharging}"
+                android:text="Only run when charging" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.recurring}"
+                android:text="Recurring" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.persistent}"
+                android:text="Persistent" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="@={form.replaceCurrent}"
+                android:text="Replace current" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{form.retryStrategy == RetryStrategy.RETRY_POLICY_EXPONENTIAL}"
+                    android:text="Exponential backoff" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{form.retryStrategy == RetryStrategy.RETRY_POLICY_LINEAR}"
+                    android:text="Linear backoff" />
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Initial backoff (seconds)"
+                android:inputType="number"
+                android:text="@={form.initialBackoffSecondsStr}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Maximum backoff (seconds)"
+                android:inputType="number"
+                android:text="@={form.maximumBackoffSecondsStr}" />
+
+            <!--
+            https://code.google.com/p/android/issues/detail?id=174871
+            android:onClick="onScheduleButtonClick"
+            -->
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/schedule_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Schedule" />
+</LinearLayout>
+</LinearLayout>
+    </layout>

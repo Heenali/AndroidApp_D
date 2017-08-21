@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_header"
+        layout="@layout/toolbar_layout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/request_order_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/noRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_header"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="You Have No Order"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+</LinearLayout>

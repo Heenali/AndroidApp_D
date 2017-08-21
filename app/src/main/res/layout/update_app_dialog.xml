@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="Upadte Application"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/exit"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/curve_border_bg"
+                android:gravity="center"
+                android:text="Exit"
+                android:textAllCaps="true"
+                android:textColor="@color/app_orange_dark"
+                android:textSize="12dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/curve_border_bg"
+                android:gravity="center"
+                android:text="Update"
+                android:textAllCaps="true"
+                android:textColor="@color/app_orange_dark"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
